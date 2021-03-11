@@ -7,19 +7,17 @@ module.exports = {
         path: path.resolve(__dirname, 'build'), // 必须使用绝对地址，输出文件夹
         filename: "bundle.js" // 打包后输出文件的文件名
     },
-    // module: {
-    //     rules: [{
-    //       test: /\.html$/,
-    //       use: [{
-    //         loader: 'html-loader',
-    //         options: {
-    //           minimize: true
-    //         }
-    //       }]
-    //     }]
-    // },
+    module: {
+        rules: [              
+            {
+              test: /\.(mjs|js|jsx)$/,
+              exclude: /node_modules/,
+              use: ['babel-loader'],
+            }
+          ]
+    },
     plugins: [new HtmlWebpackPlugin({
-        title: '欢迎页面',
+        title: 'dashboard',
         // Load a custom template (lodash by default)
         template: path.resolve(__dirname) + '/client/src/public/index.ejs',
         inject: true
