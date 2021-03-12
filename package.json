@@ -2,11 +2,11 @@
   "name": "congenial-octo-eureka",
   "version": "1.0.0",
   "description": "rpa seed first commit",
-  "main": "dist/main.js",
+  "main": "server_dist/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:server": "tsc && node ./dist/main.js",
-    "start:client:dev": "webpack && electron ./client/src/electron/main.js"
+    "start": "webpack && electron ./client/src/electron/main.js",
+    "watch": "npm run start:client:dev && tsc && nodemon ./server_dist/main.js"
   },
   "repository": {
     "type": "git",
@@ -20,9 +20,14 @@
   },
   "homepage": "https://github.com/LhLoveZgg/congenial-octo-eureka#readme",
   "dependencies": {
+    "antd": "^4.13.1",
+    "css-loader": "^5.1.2",
     "koa": "^2.13.1",
+    "less": "^4.1.1",
+    "less-loader": "^5.0.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "style-loader": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
@@ -33,11 +38,13 @@
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.2",
     "babel-loader": "^8.2.2",
+    "babel-plugin-import": "^1.13.3",
     "electron": "^12.0.1",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
     "ts-node": "^9.1.1",
     "webpack": "^5.24.4",
-    "webpack-cli": "^4.5.0"
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }

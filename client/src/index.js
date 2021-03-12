@@ -1,7 +1,7 @@
 import React from 'react';
 import reactDom, { render } from 'react-dom';
-
+import Login from '@/pages/Login/index.js'
 const App = () => (
-  <div>2</div>
+    <Login/>
 );
 reactDom.render(<App/>, document.getElementById('root'))
